@@ -1,0 +1,160 @@
+github name - shehansn/online_food_store_angular_v2
+mongoDB name - project- SHEHAN'S ORG - 2022-12-26 > ONLINE_FOOD_STORE_ANGULAR_V1
+Online_Food_Store_Database_v2
+foods
+
+------------------------------------------
+ng new frontend 
+ng serve -o
+
+// to remove git file in frontned folder 
+cd frontend 
+rm -rf .git 
+
+git branch sn_AddFeature_23_07_04
+git checkout sn_AddFeature_23_07_04
+------------------------------------------
+in frontend folder 
+-------------------------------------------
+ng g c components/partials/header 
+ng g c components/partials/search
+ng g c components/partials/tags
+ng g c components/partials/title
+ng g c components/partials/cart-summary
+ng g c components/partials/not-found
+ng g c components/partials/input-container
+ng g c components/partials/input-validaton
+ng g c components/partials/text-input
+ng g c components/partials/default-button
+ng g c components/partials/loading
+ng g c components/partials/Loader/loading-svg
+ng g c components/partials/order-items-list
+ng g c components/partials/map
+ng g c components/partials/paypal-button
+ng g c components/partials/star-rating
+
+ng g s services/food
+ng g s services/cart
+ng g s services/user
+ng g s services/loading
+ng g s services/order
+ng g s services/location
+
+ng g c components/pages/home
+ng g c components/pages/food-page
+ng g c components/pages/cart-page
+ng g c components/pages/login-page
+ng g c components/pages/register-page
+ng g c components/pages/checkout-page
+ng g c components/pages/payment-page
+ng g c components/pages/order-track-page
+
+///for user authentication-prevent user from acces checkout page without login
+ng g guard auth/guard/auth --select which type of guards need to create 
+
+
+///add interceptor for loading functionality
+ng g interceptor shared/interceptors/loading --dry-run
+
+///add onterceptor for order creating token validation and send token with headers
+ng g interceptor shared/interceptors/auth
+
+npm install ng-starrating --force
+npm install ngx-toastr --force
+npm i leaflet --force     ----leaflet is use to get location using langitude and latitude
+npm i --save-dev @types/leaflet --force  ....-----@types is install to use javascript libraries in typescript
+
+
+
+----------------------------------------------------
+backend
+----------------------------------------------------
+mkdir backend
+cd backend 
+npm init or npm init -y = initialization with all default values
+npm install typescript 
+create tsconfig.json file 
+npm install express cors 
+npm install ts-node --save-dev  => this server is written in typescript ts-node convert typescript to javascript before run.they are declared in tsconfig.json file includes
+npm install nodemon --save-dev
+npm install @types/cors --save-dev
+npm install @types/express --save-dev
+npm install jsonwebtoken
+npm i --save-dev @types/jsonwebtoken
+npm install @types/bcryptjs --save-dev
+npm install @types/node
+npm install mongoose dotenv bcryptjs express-async-handler
+
+
+
+in frontend and backend both 
+npm install -g npm-check-updates --force ////install check updates as global package 
+and move to frontend folder
+
+ncu
+ncu -u ///for automatic updates
+
+cd .. to come back main folder
+
+
+npm run prebuild in main folder for host website 
+
+
+
+F:\01 projects\online_food_store_angular_v1\online_food_store_angular_v1>cd frontend
+
+F:\01 projects\online_food_store_angular_v1\online_food_store_angular_v1\frontend>ncu
+Checking F:\01 projects\online_food_store_angular_v1\online_food_store_angular_v1\frontend\package.json
+[====================] 25/25 100%
+
+ @angular-devkit/build-angular      ^15.2.2  →  ^16.1.3
+ @angular/animations                ^15.2.0  →  ^16.1.3
+ @angular/cli                       ~15.2.2  →  ~16.1.3
+ @angular/common                    ^15.2.0  →  ^16.1.3
+ @angular/compiler                  ^15.2.0  →  ^16.1.3
+ @angular/compiler-cli              ^15.2.0  →  ^16.1.3
+ @angular/core                      ^15.2.0  →  ^16.1.3
+ @angular/forms                     ^15.2.0  →  ^16.1.3
+ @angular/platform-browser          ^15.2.0  →  ^16.1.3
+ @angular/platform-browser-dynamic  ^15.2.0  →  ^16.1.3
+ @angular/router                    ^15.2.0  →  ^16.1.3
+ @types/jasmine                      ~4.3.0  →   ~4.3.5
+ jasmine-core                        ~4.5.0  →   ~5.0.1
+ karma                               ~6.4.0  →   ~6.4.2
+ karma-chrome-launcher               ~3.1.0  →   ~3.2.0
+ karma-coverage                      ~2.2.0  →   ~2.2.1
+ karma-jasmine-html-reporter         ~2.0.0  →   ~2.1.0
+ rxjs                                ~7.8.0  →   ~7.8.1
+ tslib                               ^2.3.0  →   ^2.6.0
+ typescript                          ~4.9.4  →   ~5.1.6
+ zone.js                            ~0.12.0  →  ~0.13.1
+
+Run ncu -u to upgrade package.json
+
+F:\01 projects\online_food_store_angular_v1\online_food_store_angular_v1\frontend>ncu -u
+Upgrading F:\01 projects\online_food_store_angular_v1\online_food_store_angular_v1\frontend\package.json
+[====================] 25/25 100%
+
+ @angular-devkit/build-angular      ^15.2.2  →  ^16.1.3
+ @angular/animations                ^15.2.0  →  ^16.1.3
+ @angular/cli                       ~15.2.2  →  ~16.1.3
+ @angular/common                    ^15.2.0  →  ^16.1.3
+ @angular/compiler                  ^15.2.0  →  ^16.1.3
+ @angular/compiler-cli              ^15.2.0  →  ^16.1.3
+ @angular/core                      ^15.2.0  →  ^16.1.3
+ @angular/forms                     ^15.2.0  →  ^16.1.3
+ @angular/platform-browser          ^15.2.0  →  ^16.1.3
+ @angular/platform-browser-dynamic  ^15.2.0  →  ^16.1.3
+ @angular/router                    ^15.2.0  →  ^16.1.3
+ @types/jasmine                      ~4.3.0  →   ~4.3.5
+ jasmine-core                        ~4.5.0  →   ~5.0.1
+ karma                               ~6.4.0  →   ~6.4.2
+ karma-chrome-launcher               ~3.1.0  →   ~3.2.0
+ karma-coverage                      ~2.2.0  →   ~2.2.1
+ karma-jasmine-html-reporter         ~2.0.0  →   ~2.1.0
+ rxjs                                ~7.8.0  →   ~7.8.1
+ tslib                               ^2.3.0  →   ^2.6.0
+ typescript                          ~4.9.4  →   ~5.1.6
+ zone.js                            ~0.12.0  →  ~0.13.1
+
+Run npm install to install new versions.
