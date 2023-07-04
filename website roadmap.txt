@@ -1,0 +1,207 @@
+Lessons
+1.	Introduciton to the course
+2.	Install development tools
+3.	Create Angular App
+    i.	Create project's folder
+    ii.	Install @angular/cli
+    iii.	Create App as frontend
+4.	Add Header
+    i.	Generate Component
+    ii.	Add Html
+    iii.	Add CSS
+5.	List Foods
+    i.	Create Food model
+    ii.	Create data.ts
+        a.	Add sample foods
+    iii.	Add images to assets
+    iv.	Create Food service
+    v.	Create Home component
+        a.	Add ts
+        b.	Add html
+        c.	Add css
+6.	Search
+    i.	Add method to Food service
+    ii.	Add search route
+    iii.	Show search result in Home component
+    iv.	Generate search component
+        a.	Add to home component
+        b.	Add ts
+        c.	Add html
+        d.	Add css
+7.	Tags Bar
+    i.	Create Tag model
+    ii.	Add sample tags to data.ts
+    iii.	Food service
+        a.	Add get all tags method
+        b.	Add get all foods by tag method
+    iv.	Add tags route
+    v.	Show tag result in Home component
+    vi.	Generate Tags component
+        a.	Add to home component
+        b.	Add ts
+        c.	Add html
+        d.	Add css
+8.	Food Page
+    i.	Add method to food service
+    ii.	Generate Food Page component
+        a.	Add Route
+        b.	Add ts
+        c.	Add html
+        d.	Add css
+9.	Cart Page
+    i.	Create CartItem Model
+    ii.	Create Cart Model
+    iii.	Generate Cart service
+    iv.	Add to Cart Button in Food Page
+    v.	Generate Cart page component
+        a.	Add Route
+        b.	Add ts
+        c.	Add html
+        d.	Add css
+10.	Not Found!
+    i.	Generate Component
+        a.	Add ts
+        b.	Add html
+        c.	Add css
+    ii.	Add To Pages
+        a.	Home Page
+        b.	Food Page
+        c.	Cart Page
+11.	Connect To Backend
+    i.	Create backend folder
+    ii.	npm init
+    iii.	npm install typescript
+    iv.	Create tsconfig.json
+    v.	Create .gitignore
+    vi.	Copy data.ts to backend/src
+    vii.	npm install express cors
+    viii.	Create server.ts
+        a.	install @types
+        b.	Add Apis
+    ix.	npm install nodemon ts-node --save-dev
+    x.	Add urs.ts to frontend
+    xi.	Add HttpClient module
+    xii.	Update food service
+12.	Login Page
+    i.	Generate Component
+        a.	Add to routes
+        b.	Add ts
+        c.	Add html
+        a.	Import Reactive Forms Module
+        d.	Add Css
+    ii.	Add Login Api
+        a.	Use json
+        b.	Add jsonwebtoken
+    c.	Test Using Postman
+    iii.	Generate User Service
+        a.	Generate User model
+        b.	Add User Subject
+        c.	Add Login Method
+        a.	Add User Urls
+        b.	Generate IUserLogin interface
+        c.	Add ngx-toastr
+        a.	Import Module
+        b.	Import BrowserAnimationsModule
+        c.	Add styles in angular.json
+        d.	Add to Header
+        d.	Add Local Storage methods
+        e.	Add Logout Method
+        a.	Add to Header
+13.	Make Components For Login Page
+    i.	Input Container
+    ii.	Input Validation
+    iii.	Text Input
+    iv.	Default Button
+14.	Connect Login API To MongoDB Atlas
+    i.	Moving Apis into routers
+    ii.	Create MongoDB Atlas
+    iii.	Create .env file
+    iv.	Install
+        a.	mongoose
+        b.	dotenv
+        c.	bcryptjs
+        d.	express-async-handler
+    v.	Connect to MongoDB Atlas
+    vi.	Use MongoDB instead of data.ts in apis
+15.	Register User
+    i.	Add Register api
+    ii.	Add Register service method
+    iii.	Add Register link
+    iv.	Add Register Component
+16.	Loading!
+    i.	Add Image
+    ii.	Add Component
+    iii.	Add Service
+    iv.	Add Interceptor
+17.	Checkout Page
+    i.	Create Order Model
+    ii.	Create Checkout Page Component
+    a.	Add To Router
+    iii.	Add User to User Service
+    iv.	Add Cart to Cart Service
+    v.	Create Order Items List Component
+    vi.	Adding Map To The Checkout Page
+        a.	Add Leaflet npm package
+        a.	Add @types/leaflet
+        b.	Add Css to angular.json
+        b.	Add AddressLatLng to Order Model
+        c.	Create Map component
+        a.	Add to checkout page
+        b.	Add TS
+        a.	Change app-map selector to map
+        c.	Add Html
+        d.	Add CSS
+        d.	Add Auth Guard
+    vii.	Save Order
+        a.	Add Order Model
+        b.	Add Order Status Enum
+        c.	Add Auth Middleware
+        d.	Add Order Router
+        a.	Add create API
+        e.	Add Order Urls to urls.ts
+        f.	Add Order Service
+        a.	Add create Method
+        g.	Add Auth Interceptor
+18.	Payment Page
+    i.	Generate Component
+    ii.	Add 'getOrderForCurrentUser' api
+    iii.	Add Order Service method
+    iv.	Connect Component to Service
+    v.	Make the map component readonly
+19.	Adding Paypal
+    i.	Generate Component
+        a.	Add to payment page
+    ii.	Get Paypal client Id
+    iii.	Add Paypal JS to index.html
+    iv.	Set up Paypal button
+    v.	Add Pay api to order router
+    vi.	Get Paypal sandbox account
+20.	Order Track Page
+    i.	Generate Component
+        a.	Add to routes
+    ii.	Add API
+        a.	Add to urls.ts
+    iii.	Add method to order.service
+    iv.	Add HTML
+    v.	Add CSS
+21.	Deploy On Heroku
+    i.	OutputPath in angular.json
+    ii.	package.json
+        a.	frontend
+        b.	backend
+        c.	root
+    iii.	BASE_URL in urls.ts
+    iv.	Public folder config in server.ts
+    v.	Run commands
+    vi.	Add built folder to .gitignore
+    vii.	Commit and Push
+22.	Updating Packages (Optional)
+    i.	Install npm-check-upates as a global package
+    ii.	Run ncu -u in the frontend folder
+    iii.	Downgrade typescript to version ~4.8.2
+    iv.	Run npm install --force
+    v.	Run npm start
+    vi.	Run ncu -u in the backend folder
+    vii.	Run npm install
+    viii.	Run npm start
+
