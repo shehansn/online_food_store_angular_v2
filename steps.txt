@@ -1,7 +1,7 @@
 github name - shehansn/online_food_store_angular_v2
 mongoDB name - project- SHEHAN'S ORG - 2022-12-26 > ONLINE_FOOD_STORE_ANGULAR_V1
-Online_Food_Store_Database_v2
-foods
+Online_Food_Store_Database_v2_1
+Online_Food_Store_Collection_v2_1
 
 ------------------------------------------
 ng new frontend 

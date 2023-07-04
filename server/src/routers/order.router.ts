@@ -18,7 +18,7 @@ router.get("/", asyncHandler(
 router.post('/create',
     asyncHandler(async (req: any, res: any) => {
         const requestOrder = req.body;
-
+        console.log('requestOrder in order router', requestOrder)
         if (requestOrder.items.length <= 0) {
             res.status(HTTP_BAD_REQUEST).send('Cart Is Empty!');
             return;
@@ -30,6 +30,7 @@ router.post('/create',
         });
 
         const newOrder = new OrderModel({ ...requestOrder, user: req.user.id });
+        console.log('newOrder in order router', newOrder)
         await newOrder.save();
         res.send(newOrder);
     })
