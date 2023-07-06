@@ -15,9 +15,9 @@ export class DefaultButtonComponent {
   @Input()
   color = 'white';
   @Input()
-  fontSizeRem = 1.3;
+  fontSizeRem = '1.3';
   @Input()
-  widthRem = 12;
+  widthRem = '12';
   @Output()
   onClick = new EventEmitter();
   constructor() { }

@@ -1,0 +1,45 @@
+<div class="container">
+  <div class="content">
+    <app-title title="Update Profile" fontSize="1.6rem"></app-title>
+    <form [formGroup]="updateProfileForm" (ngSubmit)="updateProfile()">
+      <app-text-input
+        [control]="profileformcontrol.name"
+        [showErrorsWhen]="isSubmittedProfile"
+        type="text"
+        label="Name"
+      >
+      </app-text-input>
+
+      <app-text-input
+        [control]="profileformcontrol.address"
+        [showErrorsWhen]="isSubmittedProfile"
+        type="text"
+        label="Address"
+      >
+      </app-text-input>
+
+      <app-default-button text="Update Details"></app-default-button>
+    </form>
+
+    <app-title title="Change Password" fontSize="1.6rem"></app-title>
+    <form [formGroup]="updatePasswordForm" (ngSubmit)="updatePassword()">
+      <app-text-input
+        [control]="passwordformcontrol.password"
+        [showErrorsWhen]="isSubmittedPassword"
+        type="password"
+        label="New Password"
+      >
+      </app-text-input>
+
+      <app-text-input
+        [control]="passwordformcontrol.confirmPassword"
+        [showErrorsWhen]="isSubmittedPassword"
+        type="password"
+        label="Confirm Password"
+      >
+      </app-text-input>
+
+      <app-default-button text="Update Password"></app-default-button>
+    </form>
+  </div>
+</div>

@@ -33,6 +33,10 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { ToastrModule } from 'ngx-toastr';
 import { LoadingInterceptor } from './shared/interceptors/loading.interceptor';
 import { AuthInterceptor } from './shared/interceptors/auth.interceptor';
+import { ProfilePageComponent } from './components/pages/profile-page/profile-page.component';
+import { OrdersPageComponent } from './components/pages/orders-page/orders-page.component';
+import { DashboardComponent } from './components/pages/dashboard/dashboard.component';
+import { FoodAddEditPageComponent } from './components/pages/food-add-edit-page/food-add-edit-page.component';
 
 @NgModule({
   declarations: [
@@ -60,7 +64,11 @@ import { AuthInterceptor } from './shared/interceptors/auth.interceptor';
     RegisterPageComponent,
     CheckoutPageComponent,
     PaymentPageComponent,
-    OrderTrackPageComponent
+    OrderTrackPageComponent,
+    ProfilePageComponent,
+    OrdersPageComponent,
+    DashboardComponent,
+    FoodAddEditPageComponent
   ],
   imports: [
     BrowserModule,

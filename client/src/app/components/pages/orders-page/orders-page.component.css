@@ -1,0 +1,81 @@
+.container {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 35rem;
+  margin-right: 1rem;
+}
+
+
+.details {
+  margin-bottom: 1rem;
+  width: 100%;
+  border: 1px solid #eeeeee;
+  margin-top: 1rem;
+  border-radius: 5px;
+  padding: 0.5rem 1rem;
+}
+
+.details>div {
+  margin-top: 1rem;
+  font-size: 1.1rem;
+}
+
+.details strong {
+  display: inline-block;
+  width: 20%;
+}
+
+table {
+  width: 100%;
+  border: 1px solid #eeeeee;
+  margin-top: 1rem;
+  border-radius: 5px;
+  padding: 0.5rem 1rem;
+}
+
+h3 {
+  margin-top: 0.5rem;
+  margin-left: 0.3rem;
+  color: grey;
+}
+
+a:hover {
+  opacity: 0.9;
+}
+
+td {
+  height: 3rem;
+}
+
+.status {
+  font-weight: 600;
+  color: grey;
+}
+
+button {
+  height: 1rem;
+  border: none;
+  outline: none;
+  font-weight: 80;
+  border-radius: 0.8rem;
+  width: 40%;
+  height: 100%;
+  margin: 1rem auto;
+  opacity: 0.8;
+  font-weight: 600;
+  color: black;
+}
+
+button:hover {
+  cursor: pointer;
+  opacity: 1;
+}

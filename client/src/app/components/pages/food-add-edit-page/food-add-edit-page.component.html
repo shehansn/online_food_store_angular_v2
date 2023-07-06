@@ -1,0 +1,72 @@
+<div class="container">
+  <div class="content">
+    <app-title
+      [title]="editmode ? 'Update Food' : 'Create Food'"
+      fontSize="1.6rem"
+    ></app-title>
+    <form [formGroup]="foodDetailsform" (ngSubmit)="SubmitForm()">
+      <app-text-input
+        [control]="formControl.name"
+        [showErrorsWhen]="isSubmitted"
+        type="text"
+        label="Name"
+      >
+      </app-text-input>
+      <app-text-input
+        [control]="formControl.price"
+        [showErrorsWhen]="isSubmitted"
+        type="text"
+        label="Price"
+      >
+      </app-text-input>
+      <app-text-input
+        [control]="formControl.tags"
+        [showErrorsWhen]="isSubmitted"
+        type="text"
+        label="Tags"
+      >
+      </app-text-input>
+      <app-text-input
+        [control]="formControl.imageUrl"
+        [showErrorsWhen]="isSubmitted"
+        type="text"
+        label="Image URL"
+      >
+      </app-text-input>
+
+      <app-text-input
+        [control]="formControl.origins"
+        [showErrorsWhen]="isSubmitted"
+        type="text"
+        label="Origins"
+      >
+      </app-text-input>
+
+      <app-text-input
+        [control]="formControl.cookTime"
+        [showErrorsWhen]="isSubmitted"
+        type="text"
+        label="Cook Time"
+      >
+      </app-text-input>
+      <app-text-input
+        [control]="formControl.stars"
+        [showErrorsWhen]="isSubmitted"
+        type="text"
+        label="Stars"
+      >
+      </app-text-input>
+      <app-text-input
+        [control]="formControl.favorite"
+        [showErrorsWhen]="isSubmitted"
+        type="text"
+        label="Favourite"
+      >
+      </app-text-input>
+
+      <app-default-button
+        [text]="editmode ? 'Update' : 'Create'"
+      ></app-default-button>
+    </form>
+  </div>
+</div>
