@@ -1,7 +1,7 @@
 github name - shehansn/online_food_store_angular_v2
 mongoDB name - project- SHEHAN'S ORG - 2022-12-26 > ONLINE_FOOD_STORE_ANGULAR_V1
-Online_Food_Store_Database_v2
-foods
+Online_Food_Store_Database_v2_1
+Online_Food_Store_Collection_v2_1
 
 ------------------------------------------
 ng new frontend 
@@ -48,6 +48,10 @@ ng g c components/pages/register-page
 ng g c components/pages/checkout-page
 ng g c components/pages/payment-page
 ng g c components/pages/order-track-page
+ng g c components/pages/profile-page
+ng g c components/pages/orders-page
+ng g c components/pages/dashboard
+ng g c components/pages/food-AddEdit-page
 
 ///for user authentication-prevent user from acces checkout page without login
 ng g guard auth/guard/auth --select which type of guards need to create 
@@ -59,7 +63,7 @@ ng g interceptor shared/interceptors/loading --dry-run
 ///add onterceptor for order creating token validation and send token with headers
 ng g interceptor shared/interceptors/auth
 
-npm install ng-starrating --force
+npm install ng-starrating --force  //dont install
 npm install ngx-toastr --force
 npm i leaflet --force     ----leaflet is use to get location using langitude and latitude
 npm i --save-dev @types/leaflet --force  ....-----@types is install to use javascript libraries in typescript

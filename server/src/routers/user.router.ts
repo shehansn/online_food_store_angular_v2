@@ -21,12 +21,67 @@ router.get("/seed", asyncHandler(
     }
 ))
 
-router.get("/", asyncHandler(
+router.get("/all", asyncHandler(
     async (req, res) => {
-        const users = await UserModel.find();
+        const users = await UserModel.find().select('-password');
         res.send(users);
     }
 ))
+
+
+router.put('/updateProfile', asyncHandler(async (req: any, res) => {
+    console.log('currentuser update profile req', req.body)
+    const { id, name, address } = req.body;
+    console.log('currentuser update profile req', id)
+    //const user = await UserModel.find({ user: id });
+
+    const userExist = await UserModel.findById(id);
+
+    const user = await UserModel.findByIdAndUpdate(
+        id,
+        {
+            name: name,
+            address: address,
+
+        },
+        // { new: true }
+    )
+
+    if (user) {
+        const updatedUser = await UserModel.findById(id).select('-password');
+        res.send(generateTokenReponse(updatedUser!));
+    }
+    else {
+        res.status(HTTP_BAD_REQUEST).send('the user details cannot be update!');
+    }
+}))
+
+router.put('/updatePassword', asyncHandler(async (req: any, res) => {
+    console.log('currentuser update password req', req.body)
+    const { id, password } = req.body;
+    //const user = await UserModel.find({ user: id });
+    const userExist = await UserModel.findById(id);
+
+    const encryptedPassword = await bcrypt.hash(password, 10);
+
+    const user = await UserModel.findByIdAndUpdate(
+        id,
+        {
+            password: encryptedPassword,
+
+        },
+        // { new: true }
+    )
+
+    if (user) {
+        const updatedUser = await UserModel.findById(id).select('-password');
+        res.send(updatedUser);
+    }
+    else {
+        res.status(HTTP_BAD_REQUEST).send('the user password cannot be update!');
+    }
+}))
+
 
 router.post("/login", asyncHandler(
     async (req, res) => {

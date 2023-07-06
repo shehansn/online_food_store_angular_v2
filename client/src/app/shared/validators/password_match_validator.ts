@@ -14,7 +14,7 @@ export const PasswordsMatchValidator = (passwordControlName: string,
       const errors = confirmPasswordControl.errors;
       if (!errors) return;
 
-      delete errors['notMatch'];
+      delete errors.notMatch;
       confirmPasswordControl.setErrors(errors);
     }
   }

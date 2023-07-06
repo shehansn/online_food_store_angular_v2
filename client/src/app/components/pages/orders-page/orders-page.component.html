@@ -1,0 +1,48 @@
+<app-not-found
+  [visible]="!orders.length"
+  notFoundMessage="No Any Orders Made! Order Foods and Come Back "
+  resetLinkText="Back To Homepage"
+></app-not-found>
+<div class="container" *ngIf="orders.length">
+  <div class="content">
+    <app-title title="Orders" fontSize="1.6rem"></app-title>
+    <!-- {{ orders }} -->
+    <div *ngFor="let order of orders">
+      <div class="details">
+        <table>
+          <tr>
+            <td class="show-order-btn" (click)="viewOrder(order.id)">
+              <button>Show Order</button>
+            </td>
+          </tr>
+          <tr>
+            <!-- <td colspan="5">
+              <h3>Order Items:</h3>
+            </td> -->
+            <td colspan="3">Order ID: {{ order.id }}</td>
+          </tr>
+          <tr>
+            <td>{{ order.createdAt | date : "medium" }}</td>
+            <td class="status">{{ order.status }}</td>
+          </tr>
+        </table>
+        <app-order-items-list [order]="order"></app-order-items-list>
+
+        <div><strong>Name</strong> {{ order.name }}</div>
+        <div><strong>Address</strong> {{ order.address }}</div>
+        <div *ngIf="order.paymentId">
+          <strong>Payment ID</strong> {{ order.paymentId }}
+        </div>
+        <div><strong>User ID</strong> {{ order.user }}</div>
+        <!-- <app-default-button
+          type="button"
+          text="View Order"
+          bgColor="#e72929fc"
+          widthRem="7"
+          fontSizeRem="0.8"
+          (click)="viewOrder(order.id)"
+        ></app-default-button> -->
+      </div>
+    </div>
+  </div>
+</div>

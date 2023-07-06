@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { Order } from 'src/app/shared/models/Order';
 
 @Component({
   selector: 'app-order-items-list',
@@ -7,4 +8,8 @@ import { Component } from '@angular/core';
 })
 export class OrderItemsListComponent {
 
+  @Input()
+  order!: Order;
+
+  constructor() { }
 }

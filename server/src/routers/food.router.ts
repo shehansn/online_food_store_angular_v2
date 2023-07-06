@@ -1,3 +1,4 @@
+import { Food } from './../models/food.model';
 import { Router } from 'express';
 import { sample_foods, sample_tags } from '../data';
 import asyncHandler from 'express-async-handler';
@@ -25,6 +26,55 @@ router.get("/", asyncHandler(
         res.send(foods);
     }
 ))
+router.post("/create", asyncHandler(
+    async (req, res) => {
+
+        const { name, price, tags, favorite, stars, imageUrl, origins, cookTime } = req.body;
+        console.log(name, price, tags, favorite, stars, imageUrl, origins, cookTime)
+        let food = new FoodModel({
+            name: name,
+            price: price,
+            tags: tags,
+            favorite: favorite,
+            stars: stars,
+            imageUrl: imageUrl,
+            origins: origins,
+            cookTime: cookTime
+        })
+        console.log(food)
+
+        food = await food.save();
+        if (!food) res.send('The food cannot be created');
+        else res.send(food);
+    }
+))
+
+router.put("/update/:id", asyncHandler(
+    async (req, res) => {
+        const food = await FoodModel.findById(req.params.id);
+        if (!food) res.status(400).send('Invalid Food!');
+        const { name, price, tags, favorite, stars, imageUrl, origins, cookTime } = req.body;
+
+        const updatedFood = await FoodModel.findByIdAndUpdate(
+            req.params.id,
+            {
+                name: name,
+                price: price,
+                tags: tags,
+                favorite: favorite,
+                stars: stars,
+                imageUrl: imageUrl,
+                origins: origins,
+                cookTime: cookTime
+            },
+            { new: true }
+        );
+
+        if (!updatedFood) res.send('The food cannot be update');
+        else res.send(updatedFood);
+    }
+))
+
 
 router.get("/search/:searchTerm", asyncHandler(
     async (req, res) => {

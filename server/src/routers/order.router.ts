@@ -8,17 +8,25 @@ import auth from '../middlewares/auth.mid';
 const router = Router();
 router.use(auth);
 
-router.get("/", asyncHandler(
+router.get("/all", asyncHandler(
     async (req, res) => {
         const orders = await OrderModel.find();
         res.send(orders);
     }
 ))
 
+router.get('/ordersForCurrentUser', asyncHandler(async (req: any, res) => {
+    //console.log('orders fro currentuser req', req)
+    const order = await OrderModel.find({ user: req.user.id });;
+    if (order) res.send(order);
+    else res.status(HTTP_BAD_REQUEST).send();
+}))
+
+
 router.post('/create',
     asyncHandler(async (req: any, res: any) => {
         const requestOrder = req.body;
-
+        console.log('requestOrder in order router', requestOrder)
         if (requestOrder.items.length <= 0) {
             res.status(HTTP_BAD_REQUEST).send('Cart Is Empty!');
             return;
@@ -30,6 +38,7 @@ router.post('/create',
         });
 
         const newOrder = new OrderModel({ ...requestOrder, user: req.user.id });
+        console.log('newOrder in order router', newOrder)
         await newOrder.save();
         res.send(newOrder);
     })
